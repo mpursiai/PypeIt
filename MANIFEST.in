@@ -30,3 +30,7 @@ exclude environment.yml
 exclude sphinx.readme
 exclude update_docs
 
+# Add inlcude for some things
+include pypeit/data/arc_lines/reid_arxiv/int_ids*
+include pypeit/data/arc_lines/reid_arxiv/lt_sprat*
+recursive-exclude pypeit/data/standards/ing/*
