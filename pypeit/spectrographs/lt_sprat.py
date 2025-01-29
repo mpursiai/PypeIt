@@ -20,7 +20,7 @@ from pypeit.images import detector_container
 
 class LTSPRATSpectrograph(spectrograph.Spectrograph):
     """
-    Child to handle NOT ALFOSC spectrograph
+    Child to handle LT SPRAT spectrograph
     """
     ndet = 1
     name = 'lt_sprat'
@@ -117,7 +117,7 @@ class LTSPRATSpectrograph(spectrograph.Spectrograph):
         par['reduce']['findobj']['snr_thresh'] = 4
         par['reduce']['skysub']['bspline_spacing'] = 0.6
         par['reduce']['skysub']['sky_sigrej'] = 20.
-        par['reduce']['skysub']['no_local_sky'] = True
+        par['reduce']['skysub']['no_local_sky'] = False # A tricky parameter, Both False ad True fail on different spectra
 
         #par['reduce']['skysub']['local_maskwidth'] = 40.
         #par['reduce']['skysub']['no_local_sky'] = True
@@ -340,7 +340,9 @@ class LTSPRATSpectrograph(spectrograph.Spectrograph):
         # Wavelength calibrations
         if self.get_meta_value(scifile, 'dispname') == 'blue':
             par['calibrations']['wavelengths']['reid_arxiv'] = 'lt_sprat_blue_6000.fits'
- 
+
+        if self.get_meta_value(scifile, 'dispname') == 'red':
+            par['calibrations']['wavelengths']['reid_arxiv'] = 'lt_sprat_blue_6000.fits' 
         else:
             msgs.warn('lt_sprat.py: YOU NEED TO ADD IN THE WAVELENGTH SOLUTION FOR THIS GRISM')
 
