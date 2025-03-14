@@ -1,0 +1,10 @@
+# Creation Date: 2022-Feb-28
+# VACUUM -- MUST BE IN NIST
+| ion |       wave  | NIST | Instr | amplitude |                    Source |
+#| CsI |  3877.2473  |    1 |     0 |      2100 |        NIST  |
+#| CsI |  4556.5568  |    1 |     0 |           |        NIST  |
+#| CsI |  4594.4590  |    1 |     0 |           |        NIST  |
+| CsI |  8523.47276 |    1 |     0 |           |        NIST  |
+#| CsI |  8945.92960 |    1 |     0 |           |        NIST  |
+| CsI |  10027.1033 |    1 |     0 |    190000 |        NIST  |
+| CsI |  10126.3767 |    1 |     0 |    190000 |        NIST  |
