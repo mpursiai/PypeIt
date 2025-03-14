@@ -233,6 +233,16 @@ class LTTelescopePar(TelescopePar):
                                               elevation=loc.height.to(units.m).value,
                                               diameter=2.0)
 
+class CAHATelescopePar(TelescopePar):
+    def __init__(self):
+        loc = EarthLocation.of_site('Observatorio de Calar Alto')
+        super(LTTelescopePar, self).__init__(name='CAHA',
+                                              longitude=loc.lon.to(units.deg).value,
+                                              latitude=loc.lat.to(units.deg).value,
+                                              elevation=loc.height.to(units.m).value,
+                                              diameter=2.0)
+
+
 # TODO provisional values
 class JWSTTelescopePar(TelescopePar):
     def __init__(self):
