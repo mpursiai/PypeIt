@@ -43,6 +43,7 @@ from pypeit.spectrographs import jwst_nirspec
 from pypeit.spectrographs import jwst_nircam
 from pypeit.spectrographs import lt_sprat
 from pypeit.spectrographs import int_ids
+from pypeit.spectrographs import caha_cafos
 from pypeit.spectrographs import subaru_focas
 from pypeit.spectrographs import p200_ngps
 
