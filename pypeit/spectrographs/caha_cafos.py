@@ -152,7 +152,7 @@ class CAHACAFOSspectrograph(spectrograph.Spectrograph):
         par['calibrations']['darkframe']['exprng'] = [999999, None]     # No dark frames
         par['calibrations']['pinholeframe']['exprng'] = [999999, None]  # No pinhole frames
         par['calibrations']['arcframe']['exprng'] = [0, 5]  # Long arc exposures on this telescope
-        par['calibrations']['standardframe']['exprng'] = [None, 240]
+        par['calibrations']['standardframe']['exprng'] = [None, 300]
         par['scienceframe']['exprng'] = [300, None]
 
         # Multiple arcs with different lamps, so can't median combine nor clip, also need to remove continuum
