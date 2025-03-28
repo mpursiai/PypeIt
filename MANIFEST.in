@@ -34,4 +34,4 @@ exclude update_docs
 include pypeit/data/arc_lines/reid_arxiv/int_ids*
 include pypeit/data/arc_lines/reid_arxiv/lt_sprat*
 include pypeit/data/arc_lines/reid_arxiv/caha_cafos*
-recursive-exclude pypeit/data/standards/ing/*
+include pypeit/data/standards/ing/*
