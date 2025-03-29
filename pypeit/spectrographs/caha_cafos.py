@@ -120,7 +120,7 @@ class CAHACAFOSspectrograph(spectrograph.Spectrograph):
         par['reduce']['findobj']['find_trim_edge'] = [250,250]
         par['reduce']['findobj']['snr_thresh'] = 20
 
-        par['reduce']['skysub']['bspline_spacing'] = 1.2 # 0.6 by default, not sure if changing improves it
+        par['reduce']['skysub']['bspline_spacing'] = 0.6 # 0.6 by default, not sure if changing improves it
         par['reduce']['skysub']['sky_sigrej'] = 20.
         par['reduce']['skysub']['no_local_sky'] = False
 
