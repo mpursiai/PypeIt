@@ -112,8 +112,21 @@ class NOTALFOSCSpectrograph(spectrograph.Spectrograph):
         par['calibrations']['slitedges']['sync_predict'] = 'nearest'
         par['calibrations']['slitedges']['bound_detector'] = True
         # Flats are sometimes quite ugly due to dust on the slit which leads to the erroneous detection of multiple slits. So set a higher edge_thresh and minimum_slit_gap.
-        par['calibrations']['slitedges']['edge_thresh'] = 30
+        par['calibrations']['slitedges']['edge_thresh'] = 50
         par['calibrations']['slitedges']['minimum_slit_gap'] = 15
+       
+        par['reduce']['findobj']['snr_thresh'] = 10
+        par['reduce']['skysub']['bspline_spacing'] = 0.9 # 0.6 by default, not sure if changing improves it
+        par['reduce']['skysub']['no_local_sky'] = True
+        par['reduce']['skysub']['sky_sigrej'] = 20.0
+
+        #par['flexure']['spec_method'] = 'boxcar'
+
+        par['telluric']['objmodel'] = "poly"
+        par['telluric']['polyorder'] = 3
+        par['telluric']['fit_wv_min_max'] = [6800,8200]
+
+
 
         # Set pixel flat combination method
         par['calibrations']['pixelflatframe']['process']['combine'] = 'median'
@@ -127,7 +140,7 @@ class NOTALFOSCSpectrograph(spectrograph.Spectrograph):
         par['calibrations']['darkframe']['exprng'] = [999999, None]     # No dark frames
         par['calibrations']['pinholeframe']['exprng'] = [999999, None]  # No pinhole frames
         par['calibrations']['arcframe']['exprng'] = [None, None]  # Long arc exposures on this telescope
-        par['calibrations']['standardframe']['exprng'] = [None, 120]
+        par['calibrations']['standardframe']['exprng'] = [None, 160]
         par['scienceframe']['exprng'] = [10, None]
 
         # Multiple arcs with different lamps, so can't median combine nor clip, also need to remove continuum
