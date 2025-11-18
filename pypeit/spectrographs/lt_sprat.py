@@ -140,6 +140,10 @@ class LTSPRATSpectrograph(spectrograph.Spectrograph):
         #par['calibrations']['darkframe']['useframe'] = "False"
         #par['calibrations']['pinholeframe']['useframe'] = "False"
 
+        par['flexure']['spec_method'] = 'boxcar'
+
+
+
         par['calibrations']['biasframe']['exprng'] = [None, 1]
         par['calibrations']['darkframe']['exprng'] = [999999, None]     # No dark frames
         par['calibrations']['pinholeframe']['exprng'] = [999999, None]  # No pinhole frames
