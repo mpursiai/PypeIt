@@ -63,8 +63,10 @@ class LTSPRATSpectrograph(spectrograph.Spectrograph):
             gain = None
             ronoise = None
         else:
-            bin_x = np.atleast_1d(hdu[0].header['CCDXBIN']) # Checked!
-            bin_y = np.atleast_1d(hdu[0].header['CCDYBIN']) # Checked!
+            #bin_x = np.atleast_1d(hdu[0].header['CCDXBIN']) # Checked!
+            bin_x = int(hdu[0].header['CCDXBIN'])
+            #bin_y = np.atleast_1d(hdu[0].header['CCDYBIN']) # Checked!
+            bin_y = int(hdu[0].header['CCDYBIN'])
             binning ="%i,%i" % (bin_x, bin_y) # Checked!
             gain =  np.atleast_1d(2.45) #np.atleast_1d(hdu[0].header['GAIN'])  # e-/ADU
             ronoise = np.atleast_1d(5.7)  # e-
@@ -117,7 +119,7 @@ class LTSPRATSpectrograph(spectrograph.Spectrograph):
         par['reduce']['findobj']['snr_thresh'] = 4
         par['reduce']['skysub']['bspline_spacing'] = 0.6 # 0.6 by default, not sure if changing improves it
         par['reduce']['skysub']['sky_sigrej'] = 20.
-        par['reduce']['skysub']['no_local_sky'] = False
+        par['reduce']['skysub']['no_local_sky'] = True
 
         #par['reduce']['skysub']['local_maskwidth'] = 40.
         #par['reduce']['skysub']['no_local_sky'] = True
